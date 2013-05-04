@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Unicorn</title>
+    <!-- <link href="/static/css/style.css" rel="stylesheet"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="static/css/bootstrap.css" rel="stylesheet">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <!-- Loading Flat UI -->
+  <link href="static/css/flat-ui.css" rel="stylesheet">
+
+</head>
+<body>
+	<div class="header">
+		<div class="container-fluid">
+		<h1>Learn to Code with Unicorn</h1>
+	</div>
+	</div>
+	<div class="container-fluid">
+		<div class = "row-fluid">
+		<div class="span4" id ="tutorial">
+			<h2 id= "titles" >Tutorial</h2>
+			{% block body %}
+			{% endblock %}
+		</div>
+		<div class="span4" id ="input">
+			<h2 id= "titles">Input</h2>
+			<p id = "directions">Input code and Press Ctrl + Enter to run it</p>
+			<textarea id="repl" name="code" rows="25" cols="80" ></textarea>
+		</div>
+		<div class="span4" id = "result">
+			<h2 id= "titles">Result</h2>
+		</div>
+	</div>
+	</div>
+	<footer>
+		<div class="container">
+
+			<div class = "row-fluid">
+		<div class = "span12">
+		<p>Unicorn language is created by Gulnara</p>
+	</div>
+	</div>
+	</div>
+	</footer>
+	<!-- </div> -->
+</body>
+</html>
+
+    <script type="text/javascript">
+    $("#repl").focus();
+        $('#repl').bind('keypress', function(e) {
+            if (e.ctrlKey && (e.keyCode == 13)) {
+                $.ajax({
+                    url: '/parse',
+
+                    data: {lines: $("#repl").val()},
+
+                    success: function(rslt) {
+                        
+                        $("#result").append(rslt);
+                        //$("#main").prepend('<pre>>'+$("#repl").val() + '</pre>');
+
+                        var el = $("#repl");
+                      
+                        el.focus();
+                        console.log(rslt);
+                    }
+                });
+                e.preventDefault();
+            }});
+
+    </script>
