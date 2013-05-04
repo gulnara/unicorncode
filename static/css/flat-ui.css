@@ -1460,7 +1460,7 @@ textarea,
       background-color: #2c3e50; }
 
 .pagination ul {
-  background: #d7dce0;
+  /*background: #d7dce0;*/
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
@@ -1478,7 +1478,7 @@ textarea,
   .pagination ul > li.previous > a, .pagination ul > li.previous > span, .pagination ul > li.next > a, .pagination ul > li.next > span {
     background: transparent;
     border: none;
-    border-right: 2px solid white !important;
+    /*border-right: 2px solid white !important;*/
     margin: 0 9px 0 0;
     padding: 11px 17px 12px 17px;
     -webkit-border-radius: 6px 0 0 6px;
@@ -1488,7 +1488,7 @@ textarea,
     -moz-box-shadow: none !important;
     box-shadow: none !important; }
   .pagination ul > li.next > a, .pagination ul > li.next > span {
-    border-left: 2px solid white !important;
+    /*border-left: 2px solid white !important;*/
     margin-left: 9px;
     margin-right: 0;
     -webkit-border-radius: 0 6px 6px 0;
@@ -1511,7 +1511,7 @@ textarea,
     background: white;
     border: 5px solid #d7dce0;
     border-radius: 50px;
-    color: white;
+    /*color: white;*/
     line-height: 16px;
     margin: 7px 2px 6px;
     padding: 0 4px;
