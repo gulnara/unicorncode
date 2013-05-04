@@ -8,6 +8,20 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
+.logo {
+  height: 100px;
+  width: 100px;
+  /*text-align: left;*/
+  margin-right: 30px;
+  /*padding-right: 30px;*/
+}
+
+.logo:hover{
+  border-radius: 50px;
+  box-shadow: 0 0 1em #888888;
+}
+
+
 
 #footertext {
   color: #1ABC9C;
@@ -21,6 +35,7 @@
  margin-bottom: 5px;
  text-align: center;
  color: #BDC3C7;
+ /*padding-left: 30px;*/
 }
 
 #tutorial_text {
@@ -39,6 +54,11 @@
   height: 700px;
   color: #1ABC9C;
  }
+
+#input:hover{
+  box-shadow: 0 0 1em #888888;
+}
+
  #repl{
   background-color: #34495E;
   color: #1ABC9C;
