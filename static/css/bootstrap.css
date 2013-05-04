@@ -9,15 +9,34 @@
  */
 
 
+#footertext {
+  color: #1ABC9C;
+  /*text-indent: 10px;*/
+  font-size: 12px;
+  padding-top: 5px;
+}
+
+#header_text {
+ margin-top: 20px; 
+ margin-bottom: 5px;
+ text-align: center;
+ color: #BDC3C7;
+}
+
+#tutorial_text {
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
  #tutorial{
-  height: 600px;
+  /*height: 700px;*/
   background-color: #ECF0F1;
   color: #2C3E50;
  }
 
 #input{
-  height: 600px;
+  height: 700px;
   color: #1ABC9C;
  }
  #repl{
@@ -28,7 +47,7 @@
  }
 
 #result{
-  height: 600px;
+  height: 700px;
   background-color: #34495E;
   color: #ECF0F1;
  }
@@ -41,12 +60,18 @@ aside,
 details,
 figcaption,
 figure,
-header,
 hgroup,
 nav,
 section {
   display: block;
+  /*padding-top: 15px;*/
 }
+
+header {
+    display: block;
+}
+
+
 footer {
   display: block;
   /*position: absolute;*/
@@ -832,6 +857,8 @@ h4 small {
 }
 
 .page-header {
+  /*margin-top: 50px;*/
+  /*padding-top: 20px;*/
   padding-bottom: 9px;
   margin: 20px 0 30px;
   border-bottom: 1px solid #eeeeee;
@@ -4937,6 +4964,7 @@ input[type="submit"].btn.btn-mini {
 
 .pagination {
   margin: 20px 0;
+  text-align: center;
 }
 
 .pagination ul {

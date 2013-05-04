@@ -194,7 +194,7 @@ a {
 
 h1 {
   font-size: 32px;
-  font-weight: 900;
+  font-weight: 700;
   color: #1ABC9C; }
 
 h2 {
@@ -1069,7 +1069,7 @@ textarea[readonly] {
 input,
 textarea,
 .uneditable-input {
-  width: 192px; }
+  width: 97%; }
 
 .checkbox,
 .radio {
