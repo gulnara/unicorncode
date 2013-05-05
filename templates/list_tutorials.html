@@ -1,14 +1,26 @@
 {% extends "admin_layout.html" %}
 
 {% block body %}
-
+<div class="container-fluid">
 <h2> this is where tutorials will be listed </h2>
 
 <ul>
 	{% for tutorial in tutorials %}
-	<li>{{tutorial.title}} &mdash; {{tutorial.tutorial}}</li>
+	<a href="{{url_for("view_tutorial", id=tutorial.id)}}">
+	<li>{{tutorial.title}}</a>
+		<a href="{{ url_for('edit_tutorial', id=tutorial.id) }}">Edit, this!</a></li>
 	{% endfor %}
 </ul>
 
+    <form method="POST" action="{{url_for("new_tutorial")}}">
+        <label for="title">Title
+        <input type="text" name="title" id="title"></input>
+        <label for="text">Text
+        <input type="text" name="text" id="text"></input>
+        <input type="submit"></input>
+    </form>
 
+<!-- 
+<button class = "btn"><a href="#">Create New</a></button> -->
+</div>
 {% endblock %}

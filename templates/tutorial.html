@@ -1,0 +1,48 @@
+{% extends "admin_layout.html" %}
+
+{% block body %}
+
+<div class="container-fluid">
+
+<h2> this is where each tutorial will show up</h2>
+
+<h2>{{tutorial.title}}</h2>
+
+
+<p>{{tutorial.tutorial}}</p>
+
+<form action="" method="POST" accept-charset="utf-8">
+
+  <table>
+    {% for field in form %}
+
+    <tr>
+      <th>{{ field.label }}</th>
+      <td>{{ field }}</td>
+      {% if field.errors %}
+      <td>
+      <ul class=errors>
+        {% for error in field.errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+
+
+  <p><input type="submit" value="Save post"/></p>
+</form>
+
+
+<!-- s -->
+
+<button class = "btn"><a href="{{url_for("list_tutorials")}}">Back to the list</a></button>
+
+<button class = "btn"><a href="{{url_for("delete_tutorial", id=tutorial.id)}}">Delete</a></button>
+</div>
+
+{% endblock %}
+<!-- <div class = "btn" method="POST" action="{{url_for("list_tutorials")}}">Back to List Tutorials</div> -->

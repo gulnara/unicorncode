@@ -14,6 +14,7 @@ session = scoped_session(sessionmaker(bind=engine, autocommit = False, autoflush
 Base = declarative_base()
 Base.query = session.query_property()
 
+
 ### Class declarations
 
 class User(Base):
@@ -41,6 +42,7 @@ class Tutorial(Base):
 def main():
     """In case we need this for something"""
     pass
+
 
 if __name__ == "__main__":
     main()
