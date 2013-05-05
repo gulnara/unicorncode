@@ -4,6 +4,7 @@
 <div class="container-fluid">
 <h2> this is where tutorials will be listed </h2>
 
+
 <ul>
 	{% for tutorial in tutorials %}
 	<a href="{{url_for("view_tutorial", id=tutorial.id)}}">
@@ -12,15 +13,43 @@
 	{% endfor %}
 </ul>
 
-    <form method="POST" action="{{url_for("new_tutorial")}}">
+<p>You can <a href="{{ url_for('new_tutorial') }}">create notes</a>, delete notes and edit created notes.
+Thats all!</p>
+<!--     <form method="POST" action="{{url_for("new_tutorial")}}">
         <label for="title">Title
         <input type="text" name="title" id="title"></input>
         <label for="text">Text
         <input type="text" name="text" id="text"></input>
         <input type="submit"></input>
-    </form>
+    </form> -->
+
+
+<!-- <form action="" method="POST" accept-charset="utf-8">
+
+  <table>
+    {% for field in form %}
+
+    <tr>
+      <th>{{ field.label }}</th>
+      <td>{{ field }}</td>
+      {% if field.errors %}
+      <td>
+      <ul class=errors>
+        {% for error in field.errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+
+
+  <p><input type="submit" value="Save post"/></p>
+</form> -->
 
 <!-- 
 <button class = "btn"><a href="#">Create New</a></button> -->
-</div>
+<!-- </div> -->
 {% endblock %}

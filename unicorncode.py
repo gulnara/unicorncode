@@ -42,15 +42,26 @@ def view_tutorial(id):
 	
 	return render_template("tutorial.html", tutorial=tutorial)
 
-@app.route("/new_tutorial", methods=["POST"])
+@app.route("/tutorials/new_tutorial", methods=["GET", "POST"])
 def new_tutorial():
 
-	title = request.form['title']
-	tutorial = request.form['text']
-	new_tutorial = Tutorial(title=title, tutorial=tutorial)
-	db_session.add(new_tutorial)
-	db_session.commit()
-	return redirect(url_for("list_tutorials"))
+	# title = request.form['title']
+	# tutorial = request.form['text']
+	# new_tutorial = Tutorial(title=title, tutorial=tutorial)
+	# db_session.add(new_tutorial)
+	# db_session.commit()
+	# return redirect(url_for("list_tutorials"))
+	form = TutorialForm(request.form)
+	if request.method == 'POST' and form.validate():
+		title = form.title.data
+		tutorial = form.text.data
+		new_tutorial = Tutorial(title=title, tutorial=tutorial)
+		# tutorial.title = form.title.data
+		# tutorial.tutorial = form.text.data
+		db_session.add(new_tutorial)
+		db_session.commit()
+		return redirect(url_for("list_tutorials"))
+	return render_template('new_tutorial.html', form=form)
 
 @app.route("/tutorials/delete_tutorial/<int:id>", methods=["GET"])
 def delete_tutorial(id):

@@ -1,0 +1,30 @@
+{% extends "admin_layout.html" %}
+
+{% block body %}
+
+<form action="" method="POST" accept-charset="utf-8">
+
+  <table>
+    {% for field in form %}
+
+    <tr>
+      <th>{{ field.label }}</th>
+      <td>{{ field }}</td>
+      {% if field.errors %}
+      <td>
+      <ul class=errors>
+        {% for error in field.errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+
+
+  <p><input type="submit" value="Save post"/></p>
+</form>
+
+{% endblock %}
