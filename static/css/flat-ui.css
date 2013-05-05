@@ -1539,8 +1539,12 @@ textarea,
     width: 13px; }
 
 .share {
-  background-color: #ecf0f5;
+  padding-top: 10px;
+  background-color: #2C3E50;
   border-radius: 6px;
+  text-align: right;
+  margin-bottom: -20px;
+  /*display: inline-block;*/
   position: relative; }
   .share:before {
     content: "";
@@ -1549,7 +1553,7 @@ textarea,
     border-color: transparent transparent #ecf0f5 transparent;
     height: 0px;
     position: absolute;
-    left: 23px;
+    /*left: 23px;*/
     top: -9px;
     width: 0px;
     -webkit-transform: rotate(360deg); }
@@ -2337,7 +2341,6 @@ body.vjs-full-window {
   animation: sharp 2s ease infinite; }
 
 .login {
-  background: url("../images/login/imac.png") 0 0 no-repeat;
   background-size: 940px 778px;
   color: white;
   margin-bottom: 77px;
@@ -2345,7 +2348,7 @@ body.vjs-full-window {
   position: relative; }
 
 .login-screen {
-  background-color: #1abc9c;
+  background-color: #2C3E50;
   min-height: 317px;
   padding: 123px 199px 33px 306px; }
 

@@ -1,0 +1,14 @@
+{% extends "admin_layout.html" %}
+
+{% block body %}
+
+<h2> this is where tutorials will be listed </h2>
+
+<ul>
+	{% for tutorial in tutorials %}
+	<li>{{tutorial.title}} &mdash; {{tutorial.tutorial}}</li>
+	{% endfor %}
+</ul>
+
+
+{% endblock %}

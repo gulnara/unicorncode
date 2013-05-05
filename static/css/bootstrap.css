@@ -8,9 +8,35 @@
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
 
+
+/*  #custom-tweet-button a {
+    display: block;
+    padding: 2px 2px 2px 2px;
+    background: url('https://twitter.com/favicons/favicon.ico') 1px center no-repeat;
+    border: 1px solid #ccc;
+  }*/
+
+
+.sharing {
+  padding-top: 20px;
+  margin-right: 20px;
+  text-align: right;
+}
+
+.social {
+   height: 30px;
+  width: 30px;
+  /*margin-left: 300px;*/
+}
+
+.social:hover {
+   border-radius: 50px;
+  box-shadow: 0 0 2em #ECF0F1;
+}
+
 .logo {
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   /*text-align: left;*/
   margin-right: 30px;
   /*padding-right: 30px;*/
@@ -18,7 +44,7 @@
 
 .logo:hover{
   border-radius: 50px;
-  box-shadow: 0 0 1em #888888;
+  box-shadow: 0 0 1em #ECF0F1;
 }
 
 
@@ -56,7 +82,7 @@
  }
 
 #input:hover{
-  box-shadow: 0 0 1em #888888;
+  box-shadow: 0 0 1em #ECF0F1;
 }
 
  #repl{
