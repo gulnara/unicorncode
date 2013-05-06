@@ -9,3 +9,4 @@ wsgiref==0.1.2
 distribute==0.6.34
 gunicorn==0.17.4
 psycopg2
+markdown
