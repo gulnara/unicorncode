@@ -43,18 +43,23 @@ def try_tutorial(id):
 
 @app.route("/tutorials")
 def list_tutorials():
-	if g.user_id:
-		tutorials = db_session.query(Tutorial).all()
+	if not g.user_id:
+		return redirect(url_for("index"))
+	tutorials = db_session.query(Tutorial).all()
 	return render_template("list_tutorials.html", tutorials=tutorials)
 
 @app.route("/tutorial/<int:id>", methods=["GET"])
 def view_tutorial(id):
+	if not g.user_id:
+		return redirect(url_for("index"))
 	tutorial = db_session.query(Tutorial).get(id)
 	rendered_tutorial = markdown.markdown(tutorial.tutorial, safe_mode='escape')
 	return render_template("tutorial.html", tutorial=tutorial, tutorial_text=rendered_tutorial)
 
 @app.route("/tutorials/new_tutorial", methods=["GET", "POST"])
 def new_tutorial():
+	if not g.user_id:
+		return redirect(url_for("index"))
 
 	form = TutorialForm(request.form)
 	if request.method == 'POST' and form.validate():
@@ -68,6 +73,8 @@ def new_tutorial():
 
 @app.route("/tutorials/delete_tutorial/<int:id>", methods=["GET"])
 def delete_tutorial(id):
+	if not g.user_id:
+		return redirect(url_for("index"))
 	tutorial = db_session.query(Tutorial).get(id)
 	db_session.delete(tutorial)
 	db_session.commit()
@@ -76,6 +83,8 @@ def delete_tutorial(id):
 
 @app.route("/tutorials/edit_tutorial/<int:id>", methods=['GET', 'POST'])
 def edit_tutorial(id):
+	if not g.user_id:
+		return redirect(url_for("index"))
 	tutorial = db_session.query(Tutorial).get(id)
 	form = TutorialForm(request.form, tutorial)
 
@@ -100,6 +109,11 @@ def authenticate():
 	user = db_session.query(User).filter_by(email=email, password=password).one()
 	session['user_id'] = user.id
 	return redirect(url_for("list_tutorials"))
+
+@app.route("/logout")
+def logout():
+    del session['user_id']
+    return redirect(url_for("login"))
 
 app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
    

@@ -11,6 +11,8 @@
 
 <p>{{tutorial_text|safe}}</p>
 
+<div class = "editor">
+
 <form action="" method="POST" accept-charset="utf-8">
 
   <table>
@@ -33,15 +35,17 @@
   </table>
 
 
-  <p><input type="submit" value="Save post"/></p>
+<div class = "btn"><input class = "btn" type="submit" value="Save post"/></div>
 </form>
-
+</div>
 
 <!-- <button class = "btn"><a href="{{url_for("edit_tutorial", id=tutorial.id)}}">Edit</a></button> -->
 
 <button class = "btn"><a href="{{url_for("list_tutorials")}}">Back to the list</a></button>
 
 <button class = "btn"><a href="{{url_for("delete_tutorial", id=tutorial.id)}}">Delete</a></button>
+
+<button class = "btn"><a href="{{url_for("logout")}}">Logout</a></button>
 </div>
 
 {% endblock %}

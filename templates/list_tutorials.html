@@ -9,11 +9,14 @@
 	{% for tutorial in tutorials %}
 	<a href="{{url_for("view_tutorial", id=tutorial.id)}}">
 	<li>{{tutorial.title}}</a>
-		<a href="{{ url_for('edit_tutorial', id=tutorial.id) }}">Edit, this!</a></li>
+    <div class = "btn">
+		<a href="{{ url_for('edit_tutorial', id=tutorial.id) }}">Edit, this!</a> </div>
+  </li>
+
 	{% endfor %}
 </ul>
 
-<p><a href="{{ url_for('new_tutorial') }}">create tutorial</a></p>
+<div class = "btn"><a href="{{ url_for('new_tutorial') }}">create tutorial</a></div>
 <!--     <form method="POST" action="{{url_for("new_tutorial")}}">
         <label for="title">Title
         <input type="text" name="title" id="title"></input>
@@ -51,4 +54,6 @@
 <!-- 
 <button class = "btn"><a href="#">Create New</a></button> -->
 <!-- </div> -->
+
+<button class = "btn"><a href="{{url_for("logout")}}">Logout</a></button>
 {% endblock %}

@@ -16,6 +16,16 @@
     border: 1px solid #ccc;
   }*/
 
+.editor {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.jelly {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom:  20px;
+}
 
 .sharing {
   padding-top: 20px;
@@ -26,6 +36,7 @@
 .social {
    height: 30px;
   width: 30px;
+  text-align: right;
   /*margin-left: 300px;*/
 }
 
@@ -68,6 +79,7 @@
   padding-top: 20px;
   padding-left: 10px;
   padding-right: 10px;
+  line-height: 25px;
 }
 
  #tutorial{
@@ -89,6 +101,7 @@
   background-color: #34495E;
   color: #1ABC9C;
   border:none;
+  width: 97%;
   /*width: 100%;*/
  }
 
@@ -1082,8 +1095,9 @@ pre {
 
 code {
   padding: 2px 4px;
-  color: #d14;
-  white-space: nowrap;
+  color: #1ABC9C;
+  font-size: 14px;
+  /*white-space: nowrap;*/
   background-color: #f7f7f9;
   border: 1px solid #e1e1e8;
 }
@@ -1209,12 +1223,12 @@ input[type="color"],
 input,
 textarea,
 .uneditable-input {
-  width: 206px;
+  width: 700px;
+  height: 500px;
 }
 
-textarea {
-  height: auto;
-}
+
+
 
 textarea,
 input[type="text"],
@@ -1279,12 +1293,17 @@ input[type="checkbox"] {
 
 input[type="file"],
 input[type="image"],
-input[type="submit"],
+
 input[type="reset"],
 input[type="button"],
 input[type="radio"],
 input[type="checkbox"] {
   width: auto;
+}
+
+input[type="submit"]{
+  width: 100px;
+  height: 30px;
 }
 
 select,
