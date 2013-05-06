@@ -815,7 +815,7 @@ input[type="color"],
 .uneditable-input {
   border: 2px solid #dce4ec;
   color: #34495e;
-  font-family: "Lato", sans-serif;
+  font-family: "Courier";
   font-size: 16px;
   padding: 8px 0 9px 10px;
   text-indent: 1px;

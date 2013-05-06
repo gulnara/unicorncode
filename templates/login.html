@@ -15,28 +15,19 @@
   </head>
   <body>
   	<!-- <div class="container-fluid"> -->
-  	<div class="login">
-        <div class="login-screen">
-          <div class="login-icon">
-            <img src="/static/img/unicorn.png" alt="Welcome to Mail App" />
-          </div>
-
-          <div class="login-form">
-            <div class="control-group">
-              <input type="text" class="login-field" value="" placeholder="Enter your name" id="login-name" />
-              <label class="login-field-icon fui-man-16" for="login-name"></label>
-            </div>
-
-            <div class="control-group">
-              <input type="password" class="login-field" value="" placeholder="Password" id="login-pass" />
-              <label class="login-field-icon fui-lock-16" for="login-pass"></label>
-            </div>
-
-            <a class="btn btn-primary btn-large btn-block" href="#">Login</a>
-            <a class="login-link" href="#">Lost your password?</a>
-          </div>
-        </div>
-      <!-- </div> -->
+<div id="login">
+  <form class="form-signin"action="{{url_for("authenticate")}}" method="POST">
+    <h2 class="form-signin-heading">Please sign in</h2>
+    <div>
+      <label for="email"></label>
+      <input type="text" name="email" class="input-block-level" placeholder="Email address">
+    </div>
+    <div>
+      <label for="password"></label>
+      <input type="password" name="password" class="input-block-level" placeholder="Password">
+    </div>
+     <button class="btn btn-medium btn-primary" type="submit">Sign in</button>
+  </form>
 </div>
 
  <script src="js/jquery-1.8.2.min.js"></script>
