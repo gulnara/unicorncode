@@ -7,7 +7,8 @@ from sqlalchemy.orm import relationship, backref
 import datetime
 
 
-engine = create_engine("sqlite:///tutorials.db", echo=False)
+# engine = create_engine("sqlite:///tutorials.db", echo=False)
+engine = create_engine("postgresql://localhost/tutorials", echo=False)
 session = scoped_session(sessionmaker(bind=engine, autocommit = False, autoflush = False))
 
 
