@@ -20,11 +20,19 @@ def shutdown_session(exception = None):
 @app.route("/")
 @app.route("/index")
 def index():
-	return render_template("home.html")
+	tutorials = db_session.query(Tutorial).all()
+	return render_template("home.html", tutorials=tutorials)
 
 @app.route('/parse')
 def route():
     return '<pre>' + parse(request.args.get('lines', '')) + '</pre>'
+
+@app.route("/try_tutorial/<int:id>", methods=["GET"])
+def try_tutorial(id):
+	tutorials = db_session.query(Tutorial).all()
+	tutorial = db_session.query(Tutorial).get(id)
+	
+	return render_template("try_tutorial.html", tutorial=tutorial, tutorials=tutorials)
 
 @app.route('/admin')
 def login():
@@ -45,19 +53,11 @@ def view_tutorial(id):
 @app.route("/tutorials/new_tutorial", methods=["GET", "POST"])
 def new_tutorial():
 
-	# title = request.form['title']
-	# tutorial = request.form['text']
-	# new_tutorial = Tutorial(title=title, tutorial=tutorial)
-	# db_session.add(new_tutorial)
-	# db_session.commit()
-	# return redirect(url_for("list_tutorials"))
 	form = TutorialForm(request.form)
 	if request.method == 'POST' and form.validate():
 		title = form.title.data
 		tutorial = form.text.data
 		new_tutorial = Tutorial(title=title, tutorial=tutorial)
-		# tutorial.title = form.title.data
-		# tutorial.tutorial = form.text.data
 		db_session.add(new_tutorial)
 		db_session.commit()
 		return redirect(url_for("list_tutorials"))

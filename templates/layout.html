@@ -4,10 +4,10 @@
 	<title>Unicorn</title>
     <!-- <link href="/static/css/style.css" rel="stylesheet"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="static/css/bootstrap.css" rel="stylesheet">
+  <link href="/static/css/bootstrap.css" rel="stylesheet">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <!-- Loading Flat UI -->
-  <link href="static/css/flat-ui.css" rel="stylesheet">
+  <link href="/static/css/flat-ui.css" rel="stylesheet">
 
 </head>
 <body>
@@ -17,7 +17,7 @@
 
 		<div class="container-fluid">
 
-		<h1 id = "header_text"><img class="logo" src="static/img/unicorn.png">Learn to Code with Unicorn
+		<h1 id = "header_text"><img class="logo" src="/static/img/unicorn.png">Learn to Code with Unicorn
 	
   
 		</h1>
@@ -25,7 +25,11 @@
 	</div>
 	 <div class="pagination">
             <ul>
-              <li class="previous"><a href="#"><img src="static/img/pager/previous.png" /></a></li>
+              {% for tutorial in tutorials %}
+               <li> <a href="{{url_for("try_tutorial", id=tutorial.id)}}">
+                {{tutorial.title}}</a></li>
+                  {% endfor %}
+              <!-- <li class="previous"><a href="#"><img src="/static/img/pager/previous.png" /></a></li>
               <li class="active"><a href="#">1</a></li>
               <li><a href="#">2</a></li>
               <li><a href="#">3</a></li>
@@ -35,9 +39,17 @@
               <li><a href="#">7</a></li>
               <li><a href="#">8</a></li>
               <li><a href="#">9</a></li>
-              <li class="next"><a href="#"><img src="static/img/pager/next.png" /></a></li>
+              <li class="next"><a href="#"><img src="/static/img/pager/next.png" /></a></li> -->
             </ul>
           </div>
+
+<!--   <ul>
+  {% for tutorial in tutorials %}
+  <a href="{{url_for("try_tutorial", id=tutorial.id)}}">
+  <li>{{tutorial.title}}</a>
+  {% endfor %}
+</ul>
+ -->
 	<div class="container-fluid">
 		<div class = "row-fluid">
 		<div class="span4" id ="tutorial">
