@@ -417,7 +417,7 @@ token_exprs = [
     (r'(otherwise:(\n)+)',       OtherwiseToken),
     (r'(show)',                  ShowToken),
     (r'(stop)',                  StopToken),
-    (r'(end(\n)+)',              EndToken),
+    (r'(end(\n)*)',              EndToken),
     (r'(to)',                    ToToken),
     (r'(using)',                 UsingToken),
     (r'(randomize)',             RandomToken),

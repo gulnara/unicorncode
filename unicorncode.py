@@ -115,7 +115,7 @@ def logout():
     del session['user_id']
     return redirect(url_for("login"))
 
-app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
+app.secret_key = os.environ.get('SEKRET_KEY','A0Zr98j/3yX R~XHH!jmN]LWX/,?RT')
    
 if __name__ == "__main__":
 	app.run(debug=True)

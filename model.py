@@ -9,6 +9,7 @@ import datetime
 
 db_uri = os.environ.get('DATABASE_URL',"postgresql://localhost/tutorials" )
 # engine = create_engine("sqlite:///tutorials.db", echo=False)
+
 engine = create_engine(db_uri, echo=False)
 session = scoped_session(sessionmaker(bind=engine, autocommit = False, autoflush = False))
 
