@@ -28,7 +28,7 @@
 }
 
 .sharing {
-  padding-top: 20px;
+  padding-top: 10px;
   margin-right: 20px;
   text-align: right;
 }
@@ -5029,7 +5029,7 @@ input[type="submit"].btn.btn-mini {
 }
 
 .pagination {
-  margin: 20px 0;
+  /*margin: 20px 0;*/
   text-align: center;
 }
 
