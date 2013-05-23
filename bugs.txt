@@ -1,0 +1,4 @@
+# ajax request doesn't work on, have to fix key combinataion:
+Chrome Ubuntu
+Chrome Windows
+IE Windows
