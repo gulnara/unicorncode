@@ -1,6 +1,6 @@
 Unicorncode webb app - http://www.unicorncode.com/ :
 
-I built this webb app over the weekend to showcase the capabilities of the unicorn language. 
+I built this webb app over the weekend to showcase the capabilities of the unicorn language - https://github.com/gulnara/unicorn . 
 
 *The web app is built with python using Flask.
 
